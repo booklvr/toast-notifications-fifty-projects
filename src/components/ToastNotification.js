@@ -8,11 +8,9 @@ const ToastNotification = () => {
     'Message Four',
   ]
 
-  // const [messageIndex, setMessageIndex] = useState(-1)
-  // const [typeIndex, setTypeIndex] = useState(-1)
-  const [messages, setMessages] = useState([])
-
   const types = ['info', 'success', 'error']
+
+  const [messages, setMessages] = useState([])
 
   const getRandomIndex = (length) => {
     return Math.floor(Math.random() * length)
@@ -27,20 +25,15 @@ const ToastNotification = () => {
       },
     ])
 
-    console.log(messages)
-
     setTimeout(() => {
-      console.log('remove message')
       setMessages((messages) => messages.slice(1))
-
-      console.log(messages)
     }, 4000)
   }
 
   return (
     <Fragment>
       <div className='toasts'>
-        {messages.length &&
+        {messages.length > 0 &&
           messages.map((message, index) => (
             <div className={`toast ${message.type}`} key={index}>
               {message.message}
