@@ -1,8 +1,8 @@
 import React from 'react'
-import placeholder from './components/placeholder'
+import ToastNotification from './components/ToastNotification'
 
 const App = () => {
-  return <placeholder />
+  return <ToastNotification />
 }
 
 export default App
